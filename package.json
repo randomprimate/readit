@@ -1,6 +1,6 @@
 {
   "name": "Readit",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Master Electron Course Project",
   "main": "main.js",
   "author": "Jose Torres",
@@ -19,18 +19,29 @@
       "buildResources": "."
     },
     "mac": {
+      "publish": [
+        "github"
+      ],
       "category": "public.app-category.productivity",
       "target": "tar.gz"
     },
     "linux": {
+      "publish": [
+        "github"
+      ],
       "category": "Network",
       "target": "AppImage"
     },
     "win": {
+      "publish": [
+        "github"
+      ],
       "publisherName": "balameb"
     }
   },
   "dependencies": {
+    "electron-log": "^2.2.14",
+    "electron-updater": "^2.21.8",
     "jquery": "^3.3.1",
     "query-string": "^6.0.0"
   },
