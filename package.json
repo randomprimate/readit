@@ -1,33 +1,40 @@
 {
   "name": "Readit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Master Electron Course Project",
   "main": "main.js",
-  "scripts": {
-    "start": "./node_modules/.bin/electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/randomprimate/bookmarks-electron.git"
-  },
-  "keywords": [
-    "Electron",
-    "url",
-    "links"
-  ],
   "author": "Jose Torres",
-  "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/randomprimate/bookmarks-electron/issues"
-  },
   "homepage": "https://github.com/randomprimate/bookmarks-electron#readme",
-  "devDependencies": {
-    "electron": "*",
-    "devtron": "*",
-    "electron-reload": "*"
+  "scripts": {
+    "start": "electron .",
+    "mac": "electron-build -m",
+    "win": "electron-builder -w",
+    "lin": "electron-builder -l",
+    "build": "electron-builder -mwl",
+    "make-cert": "electron-builder create-self-signed-cert -p balameb"
+  },
+  "build": {
+    "appId": "com.balameb.readit",
+    "directories": {
+      "buildResources": "."
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "tar.gz"
+    },
+    "linux": {
+      "category": "Network",
+      "target": "AppImage"
+    },
+    "win": {
+      "publisherName": "balameb"
+    }
   },
   "dependencies": {
     "jquery": "^3.3.1",
     "query-string": "^6.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^20.10.0"
   }
 }

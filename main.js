@@ -4,10 +4,6 @@ const {app, ipcMain} = require('electron')
 const mainWindow = require('./mainWindow')
 const readItem = require('./readItem')
 
-
-// Enable Electron-Reload
-require('electron-reload')(__dirname)
-
 ipcMain.on('new-item', (e, itemURL) => {
   readItem( itemURL, (item) => {
     e.sender.send('new-item-success', item)
