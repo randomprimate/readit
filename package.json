@@ -11,7 +11,8 @@
     "win": "electron-builder -w",
     "lin": "electron-builder -l",
     "build": "electron-builder -mwl",
-    "make-cert": "electron-builder create-self-signed-cert -p balameb"
+    "make-cert": "electron-builder create-self-signed-cert -p balameb",
+    "publish": "electron-builder build -mwl -p onTagOrDraft"
   },
   "build": {
     "appId": "com.balameb.readit",
